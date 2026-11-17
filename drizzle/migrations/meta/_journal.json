@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793025737783,
+      "tag": "0000_migration",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793376996317,
+      "tag": "0002_roles_and_client_portal",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793509824941,
+      "tag": "0003_harden_role_permissions",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793619405918,
+      "tag": "0004_safe_oauth_role_defaults",
+      "breakpoints": true
+    }
+  ]
+}
