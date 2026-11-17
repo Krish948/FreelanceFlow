@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable/index";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Field } from "@/components/ui-kit";
@@ -95,17 +94,6 @@ function AuthPage() {
     setBusy(false);
   }
 
-  async function google() {
-    if (signup) sessionStorage.setItem("signup_role", role);
-    const r = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri:
-        window.location.origin +
-        "/auth" +
-        (redirect ? "?redirect=" + encodeURIComponent(safePath(redirect)) : ""),
-    });
-    if (r.error) toast.error(String(r.error.message ?? r.error));
-  }
-
   return (
     <div className="grid min-h-screen lg:grid-cols-2">
       <div className="hidden bg-hero p-12 text-primary-foreground lg:flex lg:flex-col lg:justify-between">
@@ -152,14 +140,6 @@ function AuthPage() {
                   ))}
                 </div>
               )}
-              <Button variant="outline" className="mt-6 w-full" onClick={google}>
-                Continue with Google
-              </Button>
-              <div className="my-5 flex items-center gap-3 text-xs text-muted-foreground">
-                <div className="h-px flex-1 bg-border" />
-                or
-                <div className="h-px flex-1 bg-border" />
-              </div>
               <form onSubmit={submit} className="grid gap-4">
                 {signup && (
                   <Field label="Name">

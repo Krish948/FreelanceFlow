@@ -52,6 +52,7 @@ $$;
 
 alter table public.projects add column shared_with_client boolean not null default true;
 alter table public.tasks add column client_visible boolean not null default false;
+alter table public.tasks add column if not exists phase text;
 alter table public.profiles add column notify_messages boolean not null default true;
 alter table public.profiles add column notify_deliverables boolean not null default true;
 alter table public.profiles add column notify_payments boolean not null default true;

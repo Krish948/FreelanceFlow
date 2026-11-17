@@ -104,6 +104,10 @@ VITE_SUPABASE_PROJECT_ID=<project-ref>
 
 **Never put `SUPABASE_SERVICE_ROLE_KEY` in a `VITE_` variable or commit it to Git.** The `.env*` pattern is ignored by `.gitignore`; use your deployment platform's secret manager for production values.
 
+### Google sign-in
+
+Enable Google under **Authentication → Providers** in the Supabase Dashboard and configure its OAuth credentials. Add the Supabase-provided callback URL to the Google OAuth client, and allow your app's local and deployed `/auth` callback URLs in Supabase's URL Configuration.
+
 ## Database migrations
 
 Database changes are stored in `drizzle/migrations`. Apply migrations to your Supabase project using your established migration workflow, and only apply migrations that have not already run.
